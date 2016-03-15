@@ -16,10 +16,13 @@ $(document).ready(function(){
     function newGame() {
       $(document).on("click", ".new", function() {
         location.reload(true);
+
+        // reset everything back to the beginning state
+        // dont use location
       });
     };
 
-    $(document).load(newGame());
+    newGame();
 
 
 });
