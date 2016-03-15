@@ -12,6 +12,16 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
+    /*--- reloads the page when New Game button is clicked ---*/
+    function newGame() {
+      $(document).on("click", ".new", function() {
+        location.reload(true);
+      });
+    };
+
+    $(document).load(newGame());
+
+
 });
 
 
