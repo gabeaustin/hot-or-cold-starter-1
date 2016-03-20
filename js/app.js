@@ -14,12 +14,12 @@ $(document).ready(function(){
 
     /*--- reloads the page when New Game button is clicked ---*/
     // function newGame() {
-      // $(document).on("click", ".new", function() {
-        // location.reload(true);
+    //   $(document).on("click", ".new", function() {
+    //     location.reload(true);
 
-        // reset everything back to the beginning state
-        // dont use location
-      // });
+    //     reset everything back to the beginning state
+    //     dont use location
+    //   });
     // };
 
     // newGame();
@@ -33,15 +33,14 @@ $(document).ready(function(){
     var randomNumber = getRandomNumber();
     var count = 0;
     $('#guessButton').click(function() {
-      var userGuess = $('#userGuess').val();
+      var userGuess = $('#userGuess').val()
     
-
     // feedback to user
-    var result = checkNumber(randomNumber, userGuess);
-    $('#feedback').html(result);
+    var result = checkNumber(randomNumber, userGuess)
+    $('#feedback').html(result)
 
     // put the guessed numbers in a list
-    $('ul#guessList').append('<li>' + userGuess + '</li>');
+    $('ul#guessList').append('<li>' + userGuess + '</li>')
 
     });
 
