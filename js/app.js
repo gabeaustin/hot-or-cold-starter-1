@@ -13,36 +13,56 @@ $(document).ready(function(){
   	});
 
     /*--- reloads the page when New Game button is clicked ---*/
-    // function newGame() {
-    //   $(document).on("click", ".new", function() {
-    //     location.reload(true);
+    function newGame() {
+      $(document).on("click", ".new", function() {
+        location.reload(true);
+      });
 
-    //     reset everything back to the beginning state
-    //     dont use location
-    //   });
-    // };
+      // reset everything back to the beginning state
+      // dont use location
+    };
 
     // newGame();
+
+    // $('form').submit(function(event){
+    //   event.preventDefault();
+    //   getUserGuess();
+    // });
+    // $newButton.click(newGame);
+
+    $('form').submit(function(event) {
+      event.preventDefault();
+      // input.val("");
+      storeRandomNumber();
+      $('a.new').click(newGame);
+    });
+    // input.val("");
+    // move to form click move to submit
+    // put in submit dont need in guess button click
+    // reset the state
+
 
     // random number 1 - 100
     function getRandomNumber() {
       return Math.floor(Math.random() * 100) + 1;
-    }
+    };
 
     // store the random number
-    var randomNumber = getRandomNumber();
-    var count = 0;
-    $('#guessButton').click(function() {
-      var userGuess = $('#userGuess').val()
+    function storeRandomNumber() {
+      var randomNumber = getRandomNumber();
+      var count = 0;
+      $('#guessButton').click(function() {
+        var userGuess = $('#userGuess').val(); // getter - because just getting value
+      });
+    };
     
     // feedback to user
-    var result = checkNumber(randomNumber, userGuess)
-    $('#feedback').html(result)
-
-    // put the guessed numbers in a list
-    $('ul#guessList').append('<li>' + userGuess + '</li>')
-
-    });
+    function feedbackToUser() {
+      var result = checkNumber(randomNumber, userGuess)
+      $('#feedback').html(result);
+      // put the guessed numbers in a list
+      $('ul#guessList').append('<li>' + userGuess + '</li>')
+    };
 
     // check to see how close a user is to the random number
     function checkNumber (randomNumber, userGuess) {
@@ -62,12 +82,8 @@ $(document).ready(function(){
       } else {
         return "Keep guessing...";
       }
-    }
-
-    $('form').submit(function(event) {
-      event.preventDefault()
-    });
-
+    };
+    
 });
 
 
