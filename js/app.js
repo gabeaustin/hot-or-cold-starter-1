@@ -14,12 +14,20 @@ $(document).ready(function(){
 
     /*--- reloads the page when New Game button is clicked ---*/
     function newGame() {
-      $(document).on("click", ".new", function() {
-        location.reload(true);
+      $(document).on('click', '.new', function() {
+        // location.reload(true);
+        alert('button clicked');
       });
 
       // reset everything back to the beginning state
       // dont use location
+    };
+
+    // Testing if the click event is working
+    function newGame() {
+      $('.new').click(function() {
+        alert( "Handler for .click() called." );
+      });
     };
 
     // newGame();
@@ -36,6 +44,7 @@ $(document).ready(function(){
       storeRandomNumber();
       $('a.new').click(newGame);
     });
+
     // input.val("");
     // move to form click move to submit
     // put in submit dont need in guess button click
@@ -55,6 +64,13 @@ $(document).ready(function(){
         var userGuess = $('#userGuess').val(); // getter - because just getting value
       });
     };
+
+    // this will allow user to either hit enter or click the Guess btn
+    $('#userGuess').keyup(function(event){
+      if(event.keyCode == 13){
+        $('#guessButton').click();
+      }
+    });
     
     // feedback to user
     function feedbackToUser() {
