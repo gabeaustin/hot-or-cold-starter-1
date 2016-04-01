@@ -30,14 +30,6 @@ $(document).ready(function(){
       });
     };
 
-    // newGame();
-
-    // $('form').submit(function(event){
-    //   event.preventDefault();
-    //   getUserGuess();
-    // });
-    // $newButton.click(newGame);
-
     $('form').submit(function(event) {
       event.preventDefault();
       // input.val("");
@@ -83,13 +75,13 @@ $(document).ready(function(){
     // check to see how close a user is to the random number
     function checkNumber (randomNumber, userGuess) {
       var diff = Math.abs(randomNumber - userGuess);
-      if (diff > 50){
+      if (diff >= 50){
         return "You are freezing cold";
-      } else if (diff > 30) {
+      } else if (diff >= 30) {
         return "Cold";
-      } else if (diff > 20) {
+      } else if (diff >= 20) {
         return "Warm";
-      } else if (diff > 10) {
+      } else if (diff >= 10) {
         return "Hot";
       } else if (diff >= 1) {
         return "You are burning up!!!";
